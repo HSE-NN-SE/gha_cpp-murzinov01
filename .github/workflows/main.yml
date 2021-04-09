@@ -43,17 +43,19 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
       - uses: actions/download-artifact@master
-      - name: ls
-        run: ls 
-      - name: cd to my_artifact
-        run: cd "/home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact"
-      - name: ls
-        run: ls 
       - uses: appleboy/telegram-action@master
         with:
           name: Sending
           to: ${{ secrets.TELEGRAM_TO_DEBUG }}
           token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+          message: new std::vector in main.cpp
+          document: "/home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact/*.exe"
+          
+      - uses: appleboy/telegram-action@master
+        with:
+          name: Sending
+          to: 712091147
+          token: 1529341832:AAEMqRJL3Y6XdZS725E0bTmF6FJgEL_L4uY
           message: new std::vector in main.cpp
           document: "/home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact/*.exe"
 
