@@ -42,7 +42,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest  
     steps:
-      - name: send default message
       - uses: actions/download-artifact@master
       - uses: appleboy/telegram-action@master
         with:
