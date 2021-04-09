@@ -43,8 +43,11 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
       - name: send default message
-        uses: appleboy/telegram-action@master
+        uses: actions/download-artifact@master
+              appleboy/telegram-action@master
         with:
+          name: my_artifact
+          path: "*.exe"
           to: ${{ secrets.TELEGRAM_TO_DEBUG }}
           token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
           message: new std::vector in main.cpp
