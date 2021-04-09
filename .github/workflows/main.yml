@@ -46,7 +46,7 @@ jobs:
       - name: ls
         run: ls 
       - name: cd to my_artifact
-        run: cd my_artifact
+        run: cd /home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact
       - name: ls
         run: ls 
       - uses: appleboy/telegram-action@master
