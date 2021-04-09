@@ -39,6 +39,7 @@ jobs:
           path: "*.exe"
           retention-days: 1
   send:
+    needs: build
     runs-on: ubuntu-latest  
     steps:
       - name: send default message
@@ -48,3 +49,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
           message: new std::vector in main.cpp
           document: "*.exe"
+
