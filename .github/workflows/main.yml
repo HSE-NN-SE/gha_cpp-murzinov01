@@ -46,7 +46,7 @@ jobs:
       - name: ls
         run: ls 
       - name: cd to my_artifact
-        run: cd /home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact
+        run: cd "/home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact"
       - name: ls
         run: ls 
       - uses: appleboy/telegram-action@master
@@ -55,5 +55,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO_DEBUG }}
           token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
           message: new std::vector in main.cpp
-          document: "*.exe"
+          document: "/home/runner/work/gha_cpp-murzinov01/gha_cpp-murzinov01/my_artifact/*.exe"
 
