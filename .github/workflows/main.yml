@@ -39,7 +39,9 @@ jobs:
           name: my_artifact
           path: "*.exe"
           retention-days: 1
-          
+  send:
+    runs-on: ubuntu-latest  
+    steps:
       - name: send default message
         uses: appleboy/telegram-action@master
         with:
