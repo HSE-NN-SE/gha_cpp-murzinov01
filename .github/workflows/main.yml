@@ -43,8 +43,8 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
       - name: send default message
-        uses: actions/download-artifact@master
-              appleboy/telegram-action@master
+      - uses: actions/download-artifact@master
+      - uses: appleboy/telegram-action@master
         with:
           name: my_artifact
           path: "*.exe"
