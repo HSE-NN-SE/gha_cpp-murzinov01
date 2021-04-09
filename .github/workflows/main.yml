@@ -45,10 +45,13 @@ jobs:
       - uses: actions/download-artifact@master
       - name: ls
         run: ls 
+      - name: cd to my_artifact
+        run: cd my_artifact
+      - name: ls
+        run: ls 
       - uses: appleboy/telegram-action@master
         with:
-          name: my_artifact
-          run: cd my_artifact
+          name: Sending
           to: ${{ secrets.TELEGRAM_TO_DEBUG }}
           token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
           message: new std::vector in main.cpp
