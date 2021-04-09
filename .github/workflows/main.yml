@@ -27,9 +27,8 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
 
       - name: build
-        run: | 
-            cl /EHsc main.cpp
-            ls  
+        run: cl /EHsc main.cpp  
+        
       - name: ls
         run: ls
 
@@ -48,3 +47,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO_DEBUG }}
           token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
           message: new std::vector in main.cpp
+          document: "*.exe"
